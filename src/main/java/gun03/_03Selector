@@ -1,5 +1,3 @@
-
-
                     By.cssSelector                  By.xpath
                     By.cssSelector("div")           By.xpath("//div")
                     ileri dogru hareket             ileri ve geri hareket
@@ -27,3 +25,4 @@ ul'un baglisi div'ler
 ul'un altindaki tüm div'ler
 //ul//div       ul div
 
+------------------------------------------------------------------------
