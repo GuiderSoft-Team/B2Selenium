@@ -1,0 +1,29 @@
+
+Aciklama                                                    cssSelector                      xpath
+aktif element                                                                                .
+
+sayfadaki herhangi bir yerindeki div'ler                    div                              //div
+
+sayfanin ilk elemani olan div (absolute path)                                                /div
+
+id olan divler                                              div[id]                          //div[@id]
+
+id='id1' olan divler                                        div[id='id']                     //div[@id='id1']
+
+tüm elementler                                              *                                //*
+
+id'si olan tüm elementler                                   [id]                             //*[@id]  ya da  //@id
+
+id='id1' olan tüm elementler                                [id='id1']                       //*[@id='id1']
+
+id='id1' olan tüm elementler                                 #id
+
+class='c1' olan div'ler                                     div[class='c1']                  //div[@class='c1']
+class='c1' olan div'ler                                     div.c1
+sayfadaki div ve p'ler                                      div, p                           // div | //p
+div'in child'i olan p'ler, ilk baglisi                      div > p                          //div/p
+div'in child'i ve sub child'i olan p'ler, tüm baglisi       div p                            //div//p
+text'i 'tt' div'ler                                                                          //div[text()='tt']
+text'i 'tt' iceren div'ler                                                                   //div[contains(text(),'tt')]
+div'lerin altinda olan p'lerden ikinci p'ler                                                 //div/p[2]
+sayfadaki tüm divlerin altindaki p p'lerden ikincincisi                                      (//div/p)[2]
