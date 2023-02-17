@@ -1,0 +1,7 @@
+Scenario 2
+1. https://opencart.abstracta.us/index.php?route=account/register     sayfasina gidin
+2. id'si logo elementin visible oldugunu assert edin.
+3. Eger chrome baglanti güvenlik uyarisi verir ise
+   "Your connection is not private" uyarisi
+    a) alttaki "Advanced" butonuna tiklayin
+    b) en alttaki "Proceed to opencart.abstracta.us (unsafe)" linkine tiklayin ve madde-2'yi yapin
