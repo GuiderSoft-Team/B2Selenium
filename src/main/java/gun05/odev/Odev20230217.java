@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Odev20230217 extends BaseClass20230217 {
 
@@ -46,7 +47,7 @@ public class Odev20230217 extends BaseClass20230217 {
     }
 
     @Test
-    public void test1FindElements(){
+    public void test1FindElements() {
         String url = "https://demo.openmrs.org/openmrs/login.htm";
         By linklerLocator = By.xpath("//ul/li");
 
@@ -62,5 +63,50 @@ public class Odev20230217 extends BaseClass20230217 {
         quitDriver();
     }
 
+
+    /*
+        driver.findElement                                      driver.findElements
+        locator ile 1 element return eder                       locator ile tüm elementleri return eder
+        WebElement return eder                                  List<WebElement> return eder
+        elementi bulamaz ise hata verir                         element yoksa hata vermez, null list return eder
+
+
+
+
+     */
+
+    @Test
+    public void test1FindElements2() {
+        String url = "https://demo.openmrs.org/openmrs/login.htm";
+        By linklerLocator = By.xpath("//ul/li");
+
+        setDriver();
+        navigateTo(url);
+        List<WebElement> linkler = driver.findElements(linklerLocator);
+
+        if (linkler.size() > 0)
+            linkler.get(0).click();
+
+        sleep(3000);
+        quitDriver();
+    }
+
+
+    @Test
+    public void test1FindElements3() {
+        String url = "https://demo.openmrs.org/openmrs/login.htm";
+        By linklerLocator = By.xpath("//ul/li");
+
+        setDriver();
+        navigateTo(url);
+        List<WebElement> linkler = driver.findElements(linklerLocator);
+
+        linkler.stream().filter(e -> e.getText().toLowerCase().contains("o"))
+                .collect(Collectors.toList())
+                .forEach(e -> System.out.println(e.getText()));
+
+        sleep(3000);
+        quitDriver();
+    }
 
 }
