@@ -38,6 +38,11 @@ public class BaseClass20230217 {
         element.click();
     }
 
+    public void sendkeys(By locator, String text){
+        element = driver.findElement(locator);
+        element.sendKeys(text);
+    }
+
     public void navigateTo(String url){
         driver.get(url);
     }
