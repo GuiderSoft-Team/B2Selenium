@@ -69,7 +69,6 @@ public class _02LoginKontrol {
 
     public void sendkeys(By locator, String text){
         driver.findElement(locator).sendKeys(text);
-
     }
 }
 
