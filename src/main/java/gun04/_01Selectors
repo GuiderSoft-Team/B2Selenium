@@ -80,6 +80,7 @@ XPath:
         : button ariyorum, bu button class'i product-row olan bir div icinde olmali ve o div icinde Urun Adi yazisi olmali
 
 
-
+//*[@*[contains(., 'row')]]         : herhangi bir attribute'u row iceren tüm elementler
+//*[@*[.='row']]                    : herhangi bir attribute'u row olan tüm elementler
 
 
