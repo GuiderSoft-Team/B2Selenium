@@ -6,6 +6,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.Point;
 import org.testng.annotations.Test;
 
+
 public class DriverManage extends BaseClass20230217 {
 
     String url = "https://demoblaze.com/";
