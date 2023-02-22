@@ -1,6 +1,9 @@
 
 Aciklama                                                    cssSelector                      xpath
+
 aktif element                                                                                .
+
+tüm elementler                                              *                                //*
 
 sayfadaki herhangi bir yerindeki div'ler                    div                              //div
 
@@ -10,8 +13,6 @@ id olan divler                                              div[id]             
 
 id='id1' olan divler                                        div[id='id']                     //div[@id='id1']
 
-tüm elementler                                              *                                //*
-
 id'si olan tüm elementler                                   [id]                             //*[@id]  ya da  //@id
 
 id='id1' olan tüm elementler                                [id='id1']                       //*[@id='id1']
@@ -19,11 +20,67 @@ id='id1' olan tüm elementler                                [id='id1']         
 id='id1' olan tüm elementler                                 #id
 
 class='c1' olan div'ler                                     div[class='c1']                  //div[@class='c1']
+
 class='c1' olan div'ler                                     div.c1
+
 sayfadaki div ve p'ler                                      div, p                           // div | //p
+
 div'in child'i olan p'ler, ilk baglisi                      div > p                          //div/p
+
 div'in child'i ve sub child'i olan p'ler, tüm baglisi       div p                            //div//p
+
 text'i 'tt' div'ler                                                                          //div[text()='tt']
+
 text'i 'tt' iceren div'ler                                                                   //div[contains(text(),'tt')]
-div'lerin altinda olan p'lerden ikinci p'ler                                                 //div/p[2]
+
+div'lerin altinda olan p'lerden ikinci p'ler                div>p:nth-of-type(2)            //div/p[2]
+
 sayfadaki tüm divlerin altindaki p p'lerden ikincincisi                                      (//div/p)[2]
+
+div'in ilk child'i                                          div > *:first-child            //div/*[1]
+
+ilk child olan div'ler                                      div:first-of-type              //div[1]
+                            |
+div'in son child'i                                          div *:last-child               //div/*[last()]
+                        |
+son child olan div'ler                                      div:last-of-type               //div[last()]
+                         |
+ikinci child olan div'ler                                   div:nth-of-type(2)             //div[2]
+
+
+XPath:
+
+//p//parent::div            : p'nin parent'i (ilk üstü, babasi) olan div
+
+//p//ancestor::div          : p'nin ancestor'i (üstleri, baba ve dedeleri) olan div
+
+
+//p/ancestor::div[1]        : p'nin üstünde olan ilk div.   //p//parent::div  ile aynidir
+
+//p/ancestor::div[last()]   : p'nin üstünde olan son div, en üstteki, p'ye en yakin olanin indexi 1 dir.
+
+
+.current (o anki) element demektir
+
+//div[./p]                          :   Burada . div'i belirtir. Ilk baglisi p olan div
+
+//div[./p[@id='ii']]                :   div ariyorum, ilk baglisi id'si ii p olmali
+
+//div[.//p[@id='ii']]               :   div ariyorum, ilk baglisi id'si ii p olmali
+
+//div[@id and ./p[@class='cc']]     :   div ariyorum, id'si olmali ve ilk baglisi class'i cc olan p olmali
+
+//p[./parent::div[@class]]          :   p ariyorum, parent'i class'si olan div olmali
+
+
+//p[./ancestor::div[1] and contains(text(), 'Welcome')]
+        : p ariyorum, ilk ustu div olmali ve p'nin texti Welcome icermeli
+
+//button[./ancestor::div[@class='product-row' and contains(., 'Urun Adi')]]
+        : button ariyorum, bu button class'i product-row olan bir div icinde olmali ve o div icinde Urun Adi yazisi olmali
+
+
+//*[@*[contains(., 'row')]]         : herhangi bir attribute'u row iceren tüm elementler
+//*[@*[.='row']]                    : herhangi bir attribute'u row olan tüm elementler
+
+
