@@ -1,8 +1,4 @@
 
-
-
-
-
 1.  git ->  http://uitestingplayground.com/
 2.  "Click"  linkine tikla
 3.  "Playground" yazisi altindaki butonun zemin-rengini bir "colorBeforeClick" degiskenine atayin ve consola yazdirin
@@ -25,13 +21,6 @@
     zemin renginin "#28a745" oldugunu assert edin
 
 
-
-
-
-
-
-
 1.  git ->  http://uitestingplayground.com/
 2.  "Shadow DOM" linkine tikla
 3.  "Playground" yazisi altindaki inputbox'a "guidersoft" send edin.
-4.
