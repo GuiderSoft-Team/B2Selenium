@@ -32,8 +32,6 @@ public class _04ExplicitWait {
 
         // wait = new WebDriverWait(driver, Duration.ofSeconds(10))
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("closeSmallModal")));
-
-
         driver.quit();
 
 

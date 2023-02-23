@@ -7,7 +7,6 @@
 6.  colorBeforeClick ve colorAfterClick degerlerinin farkli oldugunu assert edin
 
 
-
 1.  git ->  https://bonigarcia.dev/selenium-webdriver-java/
 2.  "Loading images" linkine tikla
 3.  cssSelector("#image-container #compass") olan elementin visible oldugunu assert et
