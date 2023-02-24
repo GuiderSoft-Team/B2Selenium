@@ -10,7 +10,7 @@ public class _01Wait1 extends BaseGun10{
     @Test
     public void test1(){
         driver.get("https://opencart.abstracta.us/");
-        By lMyAccount = By.xpath("//a//span[.='My Account']");
+        By lMyAccount = By.xpath("//a//span[.='My Account'] | //a[@title='My Account']");
 
         //driver.findElement(lMyAccount).click();
         click(lMyAccount);
@@ -28,7 +28,7 @@ public class _01Wait1 extends BaseGun10{
 
         click(lLoginButton);
 
-        waitForVisibilityOf(By.xpath("//a[text()='Logout']"));
+        waitForVisibilityOf(By.xpath("//aside//a[text()='Logout']"));
         driver.quit();
     }
 

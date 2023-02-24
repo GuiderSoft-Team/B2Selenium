@@ -19,12 +19,27 @@ public class BaseGun10 {
     public BaseGun10(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-
+    /*
     public void click(By locator){
         wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
     }
+     */
+
+    public void click(By locator){
+        wait.until(driver1 -> {
+            try {
+                driver1.findElement(locator).click();
+                return true;
+            }catch (Exception e){
+                return false;
+            }
+        });
+
+    }
+
 
     public void click(WebElement element){
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
