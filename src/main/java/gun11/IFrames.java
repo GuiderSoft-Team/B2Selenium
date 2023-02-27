@@ -26,7 +26,7 @@ public class IFrames {
     String url = "https://demoqa.com/frames";
 
 
-    By sampleText = By.id("sampleHeading");
+    By sampleText = By.tagName("h1");
 
 
     @Test
@@ -37,15 +37,31 @@ public class IFrames {
         //int frame1Index = 0;
         WebElement frame1Element = driver.findElement(By.id("frame1"));
 
-        driver.switchTo().frame(frame1Element);
+        driver.switchTo().frame("frame1");
         WebElement sT = wait.until(ExpectedConditions.visibilityOfElementLocated(sampleText));
         System.out.println(sT.getText());
         driver.switchTo().parentFrame();
         String mainText = driver.findElement(By.xpath("//div[@id='framesWrapper']/div[1]")).getText();
         System.out.println(mainText);
+
+        driver.switchTo().frame("frame2");
+        WebElement sT1 = wait.until(ExpectedConditions.visibilityOfElementLocated(sampleText));
+        System.out.println(sT1.getText());
+        driver.switchTo().parentFrame();
+        String mainText1 = driver.findElement(By.xpath("//div[@id='framesWrapper']/div[1]")).getText();
+        System.out.println(mainText1);
         driver.quit();
     }
 
+    /*
+        Her iFrame ayribirer web sayfasidir.
+        iframe ile islem yaparken, driver'in iframe icine atlamasi sarttir.
+        Aksi halde driver iFrame icerisindeki elementleri görmez.
+        driver.switchTo().frame(name | id | index | WebElement)
+
+        iFrame disindaki elementleri görmesi icin de iFrame'den cikmasi gerekmektedir.
+        driver.switchTo().parentFrame();
+     */
 
 }
 
