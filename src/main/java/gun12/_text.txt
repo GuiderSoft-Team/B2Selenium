@@ -1,0 +1,41 @@
+
+1.  google.com'a git
+2.  Guidersoft arattir
+3.  sayfada Guidersoft gectigini assert et
+
+
+
+
+
+
+1.  https://the-internet.herokuapp.com/frames    sayfasina git
+2.  "iFrame" linkine tikla
+3.  text editor icine adinizi ve soyadinizi send ediniz.
+
+1.  https://the-internet.herokuapp.com/frames    sayfasina git
+2.  "Nested Frames" linkine tikla
+3.  sayfadaki LEFT, MIDDLE, RIGHT, BOTTOM yazilarinin locatorlarini bulup textlerini consol'a yazdirin
+
+
+1.  https://the-internet.herokuapp.com/frames    sayfasina git
+2.  "iFrame" linkine tikla
+3.  text editor icindeki yazili metni siliniz.
+    editor.click();
+    editor.sendKeys(Keys.CONTROL + "A");
+    editor.sendKeys(Keys.DELETE);
+    ya da menüdeki linkleri kullanabilirsiniz
+
+1.  https://the-internet.herokuapp.com/frames    sayfasina git
+2.  "iFrame" linkine tikla
+3.  "File" menüsüne tikla
+4.  "New document" tikla
+5.  "B" tikla
+6.  "I" tikla
+7.  Ismini editore send et
+
+
+Windows:
+https://demoqa.com/browser-windows
+
+Alerts:
+https://demoqa.com/alerts
