@@ -1,0 +1,17 @@
+
+driver.switchTo()
+1.  frame   -> sayfayi tümü ile böler, her biri ayri web sayfasidir
+2.  iFrame  -> sayfa icindeki ayri web sayfasi
+3.  window
+4.  tab
+5.  alert   -> popup
+
+
+
+
+Windows:
+https://demoqa.com/browser-windows
+
+
+Alerts:
+https://demoqa.com/alerts
