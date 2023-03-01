@@ -6,12 +6,22 @@ driver.switchTo()
 4.  tab
 5.  alert   -> popup
 
-
-
-
 Windows:
 https://demoqa.com/browser-windows
 
 
 Alerts:
 https://demoqa.com/alerts
+
+
+
+1.  https://opencart.abstracta.us/   adresine git
+2.  Login olmak icin Menüdeki MyAccount'a tikla
+3.  Login linki visible oluncaya kadar bekle ve Login'e tikla
+4.  Kullanici adi, sifre gir ve login butonuna tikla
+5.  Login oldugunu assert et
+6.  Sol menüdeki Address Book'a tikla
+7.  New Adress butonuna tikla
+8.  Formu doldur
+9.  Continue butonuna tikla
+10. Adresi kaydettiginizi assert edin

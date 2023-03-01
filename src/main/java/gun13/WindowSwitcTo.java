@@ -11,6 +11,7 @@ import utils.Utils;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.Scanner;
 import java.util.Set;
 
 public class WindowSwitcTo {
@@ -19,7 +20,7 @@ public class WindowSwitcTo {
     WebDriver driver;
     WebDriverWait wait;
 
-    public WindowSwitcTo(){
+    public WindowSwitcTo() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -29,10 +30,11 @@ public class WindowSwitcTo {
 
     String url = "https://demoqa.com/browser-windows";
     By lTabButton = By.id("tabButton");
+    By lWindowButton = By.id("windowButton");
     By lText = By.id("sampleHeading");
 
     @Test
-    public void switchToWin1(){
+    public void switchToWin1() {
 
         driver.get(url);
         driver.findElement(lTabButton).click();
@@ -41,14 +43,14 @@ public class WindowSwitcTo {
         Set<String> wins = driver.getWindowHandles();
 
         /*
-            driver.getWindowHandle()  = "W-weferwerwererw"
-            driver.getWindowHandles() = {W-qweqweqqweqweqw, W-weferwerwererw}
+            driver.getWindowHandle()  = "W-AKTIFWIN34512"                      // aktif window'un handle'i
+            driver.getWindowHandles() = {W-PASIFWINF980089, W-AKTIFWIN34512}   // acilan tüm windowlarin handle'lari
+            driver.getWindowHandles() = {W-PASIFWINF980089, W-AKTIFWIN34512, W-XPASIFWINF980089}
         */
 
 
-
         for (String win : wins) {
-            if (!win.equalsIgnoreCase(mainWin)){
+            if (!win.equalsIgnoreCase(mainWin)) {
                 driver.switchTo().window(win);
                 break;
             }
@@ -99,6 +101,34 @@ public class WindowSwitcTo {
 
     }
 
+    @Test
+    public void switchToWin2() {
+
+        driver.get(url);
+        driver.findElement(lWindowButton).click();
+        wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+        String mainWin = driver.getWindowHandle();
+        Set<String> wins = driver.getWindowHandles();
+
+        for (String win : wins) {
+            if (!win.equalsIgnoreCase(mainWin)) {
+                driver.switchTo().window(win);
+                break;
+            }
+        }
+
+        System.out.println(driver.findElement(lText).getText());
+
+        driver.close(); // aktif pencereyi kapatir
+        wait.until(ExpectedConditions.numberOfWindowsToBe(1));
+
+        driver.switchTo().window(mainWin);
+        driver.findElement(lWindowButton).click();
+
+        Utils.bekle(2000);
+        driver.quit();
+
+    }
 
 
 }
