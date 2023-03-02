@@ -6,3 +6,17 @@ Actions
 
 https://opencart.abstracta.us/
 
+
+Bu islemler Actions
+1.  https://demoqa.com/auto-complete
+2.  ilk input icine "a" yazin
+3.  2 defa alt ok kusu ile asagi gidin
+4.  enter'a basin
+
+
+1.  https://www.snapdeal.com/
+2.  cookileri kabul edin
+3.  "watch" aratin
+4.  ilk ürüne tiklayin
+5.  ürün resmi üzerinde sol üst köseden sag alt köseye kadar mousei hareket ettirin
+
