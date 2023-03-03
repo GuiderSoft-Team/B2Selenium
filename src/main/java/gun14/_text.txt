@@ -15,7 +15,7 @@ Bu islemler Actions
 
 
 1.  https://www.snapdeal.com/
-2.  cookileri kabul edin
+//2.  cookileri kabul edin
 3.  "watch" aratin
 4.  ilk ürüne tiklayin
 5.  ürün resmi üzerinde sol üst köseden sag alt köseye kadar mousei hareket ettirin
