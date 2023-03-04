@@ -1,0 +1,6 @@
+1.  https://demoqa.com/automation-practice-form  adresine git
+2.  formu doldur ve send et
+
+
+*   2 ser adet senkeys ve click methodlari olsun
+    biri selenium ile, digeri actions ile
