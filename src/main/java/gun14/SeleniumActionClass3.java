@@ -52,11 +52,9 @@ public class SeleniumActionClass3 extends BaseActionsClass{
         WebElement firstProduct = wait.until(ExpectedConditions.visibilityOfElementLocated(lFirstProduct));
 
         Actions actions = new Actions(driver);
-
         Action action = actions
                 .click(firstProduct)
                 .build();
-
         action.perform();
 
 
@@ -99,9 +97,8 @@ public class SeleniumActionClass3 extends BaseActionsClass{
 
         int height = picture.getSize().height;
 
-        for (int i = -height/2; i < height/2-20; i=i+20) {
+        for (int i = -height/2; i < height/2; i=i+10) {
             hoverWithOffset(picture, 0, i);
-            // eger hover'da offset resim disini belirtirse MoveTargetOutOfBoundsException hatasi üretilir
         }
 
         bekle(5000);
