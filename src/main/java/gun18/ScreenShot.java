@@ -2,10 +2,7 @@ package gun18;
 
 import gun17.utility.Driver;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
@@ -68,6 +65,15 @@ public class ScreenShot {
         }
     }
 
+    @Test
+    public void testElementScreenshot(){
+        driver.get("http://opencart.abstracta.us/");
+        By lElement = By.id("menu");
+        WebElement navBar = wait.until(ExpectedConditions.visibilityOfElementLocated(lElement));
+        getScreenShot(navBar);
+        driver.quit();
+    }
+
 
     private void getScreenShot() {
         String name = "Resim_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy_MM_dd H_m_s"));
@@ -77,6 +83,17 @@ public class ScreenShot {
     public void getScreenShot(String name) {
         TakesScreenshot screenshot = (TakesScreenshot) driver;
         File source = screenshot.getScreenshotAs(OutputType.FILE);
+        File target = new File("_screenshots/" + name + ".png");
+        try {
+            FileUtils.copyFile(source, target);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void getScreenShot(WebElement element) {
+        String name = "Element_" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy_MM_dd H_m_s"));
+        File source = element.getScreenshotAs(OutputType.FILE);
         File target = new File("_screenshots/" + name + ".png");
         try {
             FileUtils.copyFile(source, target);
