@@ -1,0 +1,13 @@
+
+
+1.  Screenshots
+
+2.  Authentication, RobotClass
+
+3.  Cookies
+    https://bonigarcia.dev/selenium-webdriver-java/cookies.html
+
+
+
+
+
