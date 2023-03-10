@@ -4,14 +4,12 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class RobotClass {
-    public static void main(String[] args) throws AWTException {
-        /*
+    public static void main(String[] args) throws AWTException, InterruptedException {
+
         Robot robot = new Robot();
         robot.keyPress(KeyEvent.VK_SHIFT);
         robot.keyRelease(KeyEvent.VK_SHIFT);
         robot.keyPress(KeyEvent.getExtendedKeyCodeForChar('a'));
-
-         */
 
         write("GuiderShoft");
 
